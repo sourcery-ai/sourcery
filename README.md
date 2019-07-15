@@ -7,8 +7,8 @@ Refactor Python instantly using the power of AI. Sourcery integrates into your I
 ![Sourcery demo](sourcery-demo.gif)
 
 ### Sourcery links
-[Sourcery website](https://sourcery.ai)
-[Sourcery blog post](https://sourcery.ai/blog/introducing-sourcery/)
+- [Sourcery website](https://sourcery.ai)
+- [Sourcery blog post](https://sourcery.ai/blog/introducing-sourcery/)
 
 ### Badges
 Let the world know your project is using Sourcery to refactor with this badge:
