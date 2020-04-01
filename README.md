@@ -1,18 +1,36 @@
-[![Sourcery](https://img.shields.io/badge/Sourcery-refactored-blueviolet.svg)](https://sourcery.ai)  [![Join the chat at https://gitter.im/sourcery-ai/sourcery](https://badges.gitter.im/sourcery-ai/sourcery.svg)](https://gitter.im/sourcery-ai/sourcery?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Sourcery](https://img.shields.io/badge/Sourcery-enabled-brightgreen)](https://sourcery.ai)  [![Gitter](https://badges.gitter.im/sourcery-ai/sourcery.svg)](https://gitter.im/sourcery-ai/sourcery)
 
-Refactor Python instantly using the power of AI. Sourcery integrates into your IDE and suggests improvements to your code. Write better code faster.
+## Sourcery
+Refactor Python instantly using the power of AI.
 
-*Sourcery in action*
+## GitHub Code Reviews
+
+Ensure your code is always at the highest quality. Sourcery refactors your whole repo on installation and every Pull Request thereafter.
+
+Up and running in 1 minute. Just follow this [GitHub link](https://github.com/apps/sourcery-ai/installations/new) and select your repos.
+
+Or for a quick demo, ⭐ this repo, and Sourcery will refactor your most starred public python repo and send you a pull request.
+
+## IDE Integration
+Sourcery integrates into your editor to refactor your code as you write it.
+
+Find quick installation instructions here:
+- [PyCharm](https://sourcery.ai/download/?editor=pycharm)
+- [VS Code](https://sourcery.ai/download/?editor=vscode)
+
+More editor integrations coming soon.
+
+### Demo
 
 ![Sourcery demo](sourcery-demo.gif)
 
-### Sourcery links
+## Sourcery links
+- [Docs](/sourcery-ai/sourcery/wiki)
 - [Sourcery website](https://sourcery.ai)
-- [Sourcery blog post](https://sourcery.ai/blog/introducing-sourcery/)
 
-### Badges
+## Badges
 Let the world know your project is using Sourcery to refactor with this badge:
 
-[![Sourcery](https://img.shields.io/badge/Sourcery-refactored-blueviolet.svg)](https://sourcery.ai)
+[![Sourcery](https://img.shields.io/badge/Sourcery-enabled-brightgreen)](https://sourcery.ai)
 
-    [![Sourcery](https://img.shields.io/badge/Sourcery-refactored-blueviolet.svg)](https://sourcery.ai)
+    [![Sourcery](https://img.shields.io/badge/Sourcery-enabled-brightgreen)](https://sourcery.ai)
