@@ -7,7 +7,7 @@ Refactor Python instantly using the power of AI.
 
 Ensure your code is always at the highest quality. Sourcery refactors your whole repo on installation and every Pull Request thereafter.
 
-Up and running in 1 minute. Just follow this [GitHub link](https://github.com/apps/sourcery-ai/installations/new) and select your repos.
+Up and running in 1 minute. Just follow this [link](https://github.com/apps/sourcery-ai/installations/new) and select your repos.
 
 Or for a quick demo, ⭐ this repo, and Sourcery will refactor your most starred public python repo and send you a pull request.
 
@@ -24,7 +24,7 @@ More editor integrations coming soon.
 
 ![Sourcery demo](sourcery-demo.gif)
 
-## Sourcery links
+## Links
 - [Docs](/sourcery-ai/sourcery/wiki)
 - [Sourcery website](https://sourcery.ai)
 
