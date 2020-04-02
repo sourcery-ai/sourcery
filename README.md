@@ -25,7 +25,7 @@ More editor integrations coming soon.
 ![Sourcery demo](sourcery-demo.gif)
 
 ## Links
-- [Docs](/sourcery-ai/sourcery/wiki)
+- [Docs](https://github.com/sourcery-ai/sourcery/wiki)
 - [Sourcery website](https://sourcery.ai)
 
 ## Badges
