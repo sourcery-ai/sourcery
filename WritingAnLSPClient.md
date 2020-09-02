@@ -48,7 +48,7 @@ interface SourceryInitializationOptions: {
 }
 ```
 
-Once the Sourcery Language Server is initialized is will act in a fully LSP compliant manner providing refactoring suggestions and hover functionality.
+Once the Sourcery Language Server is initialized it will act in a fully LSP compliant manner providing refactoring suggestions and hover functionality.
 
 ## Let us know!
 if you implement a new client for a editor we'd love to hear about it and are happy to help if you need any assistance. Just drop us a line at hello@sourcery.ai
