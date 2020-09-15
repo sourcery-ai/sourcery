@@ -1,0 +1,8 @@
+- id: sourcery
+  name: sourcery
+  description: Magically refactor Python
+  language: python
+  additional_dependencies: ['--extra-index-url', 'https://test.pypi.org/simple', 'sourcery-cli']
+  entry: sourcery refactor
+  types: [python]
+
