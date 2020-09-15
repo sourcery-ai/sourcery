@@ -20,7 +20,7 @@ Verifying refactoring functionality - success
 ```
 
 ## Startup and Initialisation
-The client communicates with The Sourcery Language Server through standard input and output. To run the Sourcery Language Server execute `path_to_binary/sourcery --lsp`.
+The client communicates with The Sourcery Language Server through standard input and output. To run the Sourcery Language Server execute `path_to_binary/sourcery lsp`.
 
 The Sourcery Server is initialised with the standard [LSP initialize request](https://microsoft.github.io/language-server-protocol/specifications/specification-current/#initialize). It requires the `initializationOptions` param to be populated as shown below and will respond with the list of ServerCapabilities that it supports.
 
