@@ -4,5 +4,6 @@
   language: python
   additional_dependencies: ['--extra-index-url', 'https://test.pypi.org/simple', 'sourcery-cli==0.7.13b2']
   entry: sourcery refactor --check
+  require_serial: true
   types: [python]
 
