@@ -2,8 +2,7 @@
   name: sourcery
   description: Magically refactor Python
   language: python
-  additional_dependencies: ['--extra-index-url', 'https://test.pypi.org/simple', 'sourcery-cli==0.7.13b2']
+  additional_dependencies: [sourcery-cli==0.7.13b3]
   entry: sourcery refactor --check
   require_serial: true
   types: [python]
-
