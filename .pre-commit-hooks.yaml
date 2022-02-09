@@ -2,7 +2,7 @@
   name: sourcery
   description: Magically refactor Python
   language: python
-  additional_dependencies: [sourcery-cli==0.10.1]
+  additional_dependencies: [sourcery-cli==0.10.2]
   entry: sourcery refactor --check
   require_serial: true
   types: [python]
