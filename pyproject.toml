@@ -1,4 +1,4 @@
 [project]
 name = "sourcery"
-version = "0.11.4"
+version = "0.11.5"
 description = "Magically refactor Python"
