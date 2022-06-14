@@ -4,5 +4,4 @@
   language: python
   additional_dependencies: [sourcery-cli==0.12.0]
   entry: sourcery refactor --check
-  require_serial: true
   types: [python]
