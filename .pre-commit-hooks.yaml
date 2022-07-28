@@ -2,6 +2,6 @@
   name: sourcery
   description: Magically refactor Python
   language: python
-  additional_dependencies: [sourcery-cli==0.12.3]
+  additional_dependencies: [sourcery-cli==0.12.4]
   entry: sourcery review --check
   types: [python]
