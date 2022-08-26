@@ -1,0 +1,11 @@
+blank_lines_enabled: true
+contact_links:
+  - name: Sourcery Documentation
+    url: https://docs.sourcery.ai/
+    about: Official Sourcery documentation - please check here before opening an issue.
+  - name: Sourcery Website
+    url: https://sourcery.ai/
+    about: Main Sourcery website - for details about Sourcery's products.
+  - name: Email
+    url: mailto:hello@sourcery.ai
+    about: Contact email address - for sensitive issues or just to get in touch.
