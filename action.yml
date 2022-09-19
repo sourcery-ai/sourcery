@@ -3,6 +3,9 @@ name: "Sourcery"
 description: 'A GitHub Action for running Sourcery.'
 
 inputs:
+  token:
+    description: "The Sourcery token for logging in."
+    required: true
   options:
     description:
       "Options passed to Sourcery. Run `sourcery review --help` to see available options. Default:
@@ -24,5 +27,6 @@ runs:
     - run: |
         # TODO: maybe support inputting the version here
         python3 -m pip install sourcery-cli
+        sourcery login --token ${{ inputs.token }}
         sourcery review ${{ inputs.options }} ${{ inputs.src }}
       shell: bash
