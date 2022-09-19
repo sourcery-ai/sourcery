@@ -12,21 +12,32 @@ inputs:
       '--check'"
     required: false
     default: "--check"
-  src:
-    description: "Path to run Sourcery on. Default: '.'"
+  base_ref:
+    description: |
+      Reference to compare the current branch with.
+      # TODO: much better explanation here, please
     required: false
-    default: "."
-  # version:
-  #   description: 'Python Version specifier (PEP440) - e.g. "0.12.8"'
-  #   required: false
-  #   default: ""
+    default: ""
+  version:
+    description: 'Sourcery version - e.g. "0.12.8". Default: latest.'
+    required: false
+    default: ""
 
 runs:
   using: composite
   steps:
     - run: |
-        # TODO: maybe support inputting the version here
-        python3 -m pip install sourcery-cli
+        if [ "${{ inputs.version }}" == "" ]; then
+          python3 -m pip install sourcery-cli
+        else
+          python3 -m pip install sourcery-cli==${{ inputs.version }}
+        fi
+        
         sourcery login --token ${{ inputs.token }}
-        sourcery review ${{ inputs.options }} ${{ inputs.src }}
+
+        if [ "${{ inputs.base_ref }}" == "" ]; then
+          sourcery review ${{ inputs.options }} .
+        else
+          git diff ${{ inputs.base_ref }} --diff-filter=AMR --name-only | xargs sourcery review  ${{ inputs.options }}
+        fi
       shell: bash
