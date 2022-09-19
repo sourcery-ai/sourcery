@@ -1,32 +1,31 @@
-name: "Sourcery"
+name: 'Sourcery'
 
 description: 'A GitHub Action for running Sourcery.'
 
 inputs:
   token:
-    description: "The Sourcery token for logging in."
+    description: 'The Sourcery token for logging in.'
     required: true
   options:
     description:
-      "Options passed to Sourcery. Run `sourcery review --help` to see available options. Default:
-      '--check'"
+      "Options passed to Sourcery. Run `sourcery review --help` to see available options."
     required: false
     default: "--check"
   base_ref:
-    description: |
-      Reference to compare the current branch with.
-      # TODO: much better explanation here, please
+    description: "Reference to compare the current branch with and run Sourcery on the diff. If empty, run Sourcery on the current branch."
     required: false
     default: ""
   version:
-    description: 'Sourcery version - e.g. "0.12.8". Default: latest.'
+    description: "Sourcery version - e.g. '0.12.8'. If empty, default to the latest version."
     required: false
     default: ""
 
 runs:
   using: composite
   steps:
-    - run: |
+    - name: Review with Sourcery
+      shell: bash
+      run: |
         if [ "${{ inputs.version }}" == "" ]; then
           python3 -m pip install sourcery-cli
         else
@@ -40,4 +39,3 @@ runs:
         else
           git diff ${{ inputs.base_ref }} --diff-filter=AMR --name-only | xargs sourcery review  ${{ inputs.options }}
         fi
-      shell: bash
