@@ -1,4 +1,4 @@
-name: 'Sourcery'
+name: 'Sourcery GitHub Action'
 
 description: 'A GitHub Action for running Sourcery.'
 
