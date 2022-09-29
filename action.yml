@@ -37,5 +37,5 @@ runs:
         if [ "${{ inputs.base_ref }}" == "" ]; then
           sourcery review ${{ inputs.options }} .
         else
-          git diff ${{ inputs.base_ref }} --diff-filter=AMR --name-only | xargs sourcery review  ${{ inputs.options }}
+          git diff ${{ inputs.base_ref }}... --diff-filter=AMR --name-only | xargs sourcery review  ${{ inputs.options }}
         fi
