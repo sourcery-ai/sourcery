@@ -26,16 +26,22 @@ runs:
     - name: Review with Sourcery
       shell: bash
       run: |
+        echo "::group:: Install Sourcery"
         if [ "${{ inputs.version }}" == "" ]; then
           python3 -m pip install sourcery-cli
         else
           python3 -m pip install sourcery-cli==${{ inputs.version }}
         fi
-        
-        sourcery login --token ${{ inputs.token }}
+        echo "::endgroup::"
 
+        echo "::group:: Authenticate Sourcery"
+        sourcery login --token ${{ inputs.token }}
+        echo "::endgroup::"
+
+        echo "::group:: Sourcery review"
         if [ "${{ inputs.base_ref }}" == "" ]; then
           sourcery review ${{ inputs.options }} .
         else
           git diff ${{ inputs.base_ref }}... --diff-filter=AMR --name-only | xargs sourcery review  ${{ inputs.options }}
         fi
+        echo "::endgroup::"
