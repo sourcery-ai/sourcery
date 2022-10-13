@@ -11,18 +11,21 @@ inputs:
       "Options passed to Sourcery. Run `sourcery review --help` to see available options."
     required: false
     default: "--check"
-  base_ref:
-    description: "Reference to compare the current branch with and run Sourcery on the diff. If empty, run Sourcery on the current branch."
-    required: false
-    default: ""
   version:
-    description: "Sourcery version - e.g. '0.12.8'. If empty, default to the latest version."
+    description: "Sourcery CLI version - e.g. '0.12.10'. If empty, default to the latest version."
     required: false
     default: ""
   check:
     description: "Fail job if issues are found."
     required: false
     default: "true"
+  diff_ref:
+    description: |
+      Reference to compare the current branch with and run Sourcery on the diff.
+      If empty, run Sourcery on the entire codebase.
+      To review only code that changed in a PR, use "${{ github.event.pull_request.base.sha }}".
+    required: false
+    default: ""
 
 runs:
   using: composite
@@ -45,6 +48,7 @@ runs:
     - name: Sourcery review
       shell: bash
       run: |
+      
         if [ ${{ inputs.check }} == "true" ]; then
           check_arg="--check"
         elif [ ${{ inputs.check }} == "false" ]; then
@@ -55,9 +59,14 @@ runs:
           echo "Got '${{ inputs.check }}'"
         fi
 
-        if [ -z ${{ inputs.base_ref }} ]
-        then
-          sourcery review $check_arg ${{ inputs.options }} .
+        if [ -z ${{ inputs.diff_ref }} ]; then
+          diff_arg=""
         else
-          git diff ${{ inputs.base_ref }}... --diff-filter=AMR --name-only | xargs sourcery review $check_arg ${{ inputs.options }}
+          diff_arg="--diff=git diff \"${{ inputs.diff_ref }}\""
         fi
+
+        sourcery review \
+          $check_arg \
+          $diff_arg \
+          ${{ inputs.options }} \
+          .
