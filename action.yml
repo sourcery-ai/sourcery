@@ -26,7 +26,8 @@ runs:
     - name: Install Sourcery
       shell: bash
       run: |
-        if [ "${{ inputs.version }}" == "" ]; then
+        if [ -z ${{ inputs.version }} ]
+        then
           python3 -m pip install sourcery-cli
         else
           python3 -m pip install sourcery-cli==${{ inputs.version }}
@@ -40,7 +41,8 @@ runs:
     - name: Sourcery review
       shell: bash
       run: |
-        if [ "${{ inputs.base_ref }}" == "" ]; then
+        if [ -z ${{ inputs.base_ref }} ]
+        then
           sourcery review ${{ inputs.options }} .
         else
           git diff ${{ inputs.base_ref }}... --diff-filter=AMR --name-only | xargs sourcery review  ${{ inputs.options }}
