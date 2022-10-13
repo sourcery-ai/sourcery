@@ -19,6 +19,10 @@ inputs:
     description: "Sourcery version - e.g. '0.12.8'. If empty, default to the latest version."
     required: false
     default: ""
+  check:
+    description: "Fail job if issues are found."
+    required: false
+    default: "true"
 
 runs:
   using: composite
@@ -41,9 +45,19 @@ runs:
     - name: Sourcery review
       shell: bash
       run: |
+        if [ ${{ inputs.check }} == "true" ]; then
+          check_arg="--check"
+        elif [ ${{ inputs.check }} == "false" ]; then
+          check_arg=""
+        else
+          echo "Invalid value for input 'check'"
+          echo "Expected either 'true' or 'false'"
+          echo "Got '${{ inputs.check }}'"
+        fi
+
         if [ -z ${{ inputs.base_ref }} ]
         then
-          sourcery review ${{ inputs.options }} .
+          sourcery review $check_arg ${{ inputs.options }} .
         else
-          git diff ${{ inputs.base_ref }}... --diff-filter=AMR --name-only | xargs sourcery review  ${{ inputs.options }}
+          git diff ${{ inputs.base_ref }}... --diff-filter=AMR --name-only | xargs sourcery review $check_arg ${{ inputs.options }}
         fi
