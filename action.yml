@@ -23,6 +23,10 @@ inputs:
     description: "Change files in place."
     required: false
     default: "false"
+  config:
+    description: "Location of the Sourcery YAML configuration file."
+    required: false
+    default: ""
   diff_ref:
     description: |
       Reference to compare the current branch with and run Sourcery on the diff.
@@ -73,6 +77,12 @@ runs:
           echo "Got '${{ inputs.in_place }}'"
         fi
 
+        if [ -z ${{ inputs.config }} ]; then
+          config_arg=""
+        else
+          config_arg="--config ${{ inputs.config }}"
+        fi
+
         if [ -z ${{ inputs.diff_ref }} ]; then
           diff_arg=""
         else
@@ -82,6 +92,7 @@ runs:
         sourcery review \
           $check_arg \
           $in_place_arg \
+          $config_arg \
           $diff_arg \
           ${{ inputs.options }} \
           .
