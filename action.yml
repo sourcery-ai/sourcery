@@ -1,16 +1,15 @@
-name: 'Sourcery GitHub Action'
+name: "Sourcery GitHub Action"
 
-description: 'A GitHub Action for running Sourcery.'
+description: "A GitHub Action for running Sourcery."
 
 inputs:
   token:
-    description: 'The Sourcery token for logging in.'
+    description: "The Sourcery token for logging in."
     required: true
-  options:
-    description:
-      "Options passed to Sourcery. Run `sourcery review --help` to see available options."
+  target:
+    description: "File(s) or directory(ies) to review."
     required: false
-    default: "--check"
+    default: "."
   version:
     description: "Sourcery CLI version - e.g. '0.12.10'. If empty, default to the latest version."
     required: false
@@ -60,7 +59,7 @@ runs:
     - name: Sourcery review
       shell: bash
       run: |
-      
+
         if [ ${{ inputs.check }} == "true" ]; then
           check_arg="--check"
         elif [ ${{ inputs.check }} == "false" ]; then
@@ -70,7 +69,7 @@ runs:
           echo "Expected either 'true' or 'false'"
           echo "Got '${{ inputs.check }}'"
         fi
-      
+
         if [ ${{ inputs.in_place }} == "true" ]; then
           in_place_arg="--in-place"
         elif [ ${{ inputs.in_place }} == "false" ]; then
@@ -80,7 +79,7 @@ runs:
           echo "Expected either 'true' or 'false'"
           echo "Got '${{ inputs.in_place }}'"
         fi
-      
+
         if [ ${{ inputs.verbose }} == "true" ]; then
           verbose_arg="--verbose"
         elif [ ${{ inputs.verbose }} == "false" ]; then
@@ -109,5 +108,4 @@ runs:
           $verbose_arg \
           $config_arg \
           $diff_arg \
-          ${{ inputs.options }} \
-          .
+          ${{ inputs.target }}
