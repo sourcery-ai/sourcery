@@ -15,6 +15,10 @@ inputs:
     description: "Sourcery CLI version - e.g. '0.12.10'. If empty, default to the latest version."
     required: false
     default: ""
+  verbose:
+    description: "Verbose output with explanation and code snippets."
+    required: false
+    default: "true"
   check:
     description: "Fail job if issues are found."
     required: false
@@ -76,6 +80,16 @@ runs:
           echo "Expected either 'true' or 'false'"
           echo "Got '${{ inputs.in_place }}'"
         fi
+      
+        if [ ${{ inputs.verbose }} == "true" ]; then
+          verbose_arg="--verbose"
+        elif [ ${{ inputs.verbose }} == "false" ]; then
+          verbose_arg=""
+        else
+          echo "Invalid value for input 'verbose'"
+          echo "Expected either 'true' or 'false'"
+          echo "Got '${{ inputs.verbose }}'"
+        fi
 
         if [ -z ${{ inputs.config }} ]; then
           config_arg=""
@@ -92,6 +106,7 @@ runs:
         sourcery review \
           $check_arg \
           $in_place_arg \
+          $verbose_arg \
           $config_arg \
           $diff_arg \
           ${{ inputs.options }} \
