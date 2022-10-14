@@ -15,19 +15,19 @@ inputs:
     required: false
     default: "."
   version:
-    description: "Sourcery CLI version - e.g. '0.12.10'. If empty, default to the latest version."
+    description: "Sourcery CLI version, e.g. '0.12.10'. If empty, default to the latest version."
     required: false
     default: ""
   verbose:
-    description: "Verbose output with explanation and code snippets."
+    description: "Verbose output with explanation and code snippets. Either 'true' or 'false'."
     required: false
     default: "true"
   check:
-    description: "Fail job if issues are found."
+    description: "Fail job if issues are found. Either 'true' or 'false'."
     required: false
     default: "true"
   in_place:
-    description: "Change files in place."
+    description: "Change files in place. Either 'true' or 'false'."
     required: false
     default: "false"
   config:
