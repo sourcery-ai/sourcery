@@ -35,7 +35,7 @@ inputs:
     required: false
     default: ""
   diff_ref:
-    description: |
+    description: >
       Reference to compare the current branch with and run Sourcery on the diff.
       If empty, run Sourcery on the entire codebase.
       To review only code that changed in a PR, use "${{ github.event.pull_request.base.sha }}".
