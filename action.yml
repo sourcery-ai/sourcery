@@ -63,7 +63,6 @@ runs:
     - name: Sourcery review
       shell: bash
       run: |
-
         if [ ${{ inputs.check }} == "true" ]; then
           check_arg="--check"
         elif [ ${{ inputs.check }} == "false" ]; then
@@ -72,6 +71,7 @@ runs:
           echo "Invalid value for input 'check'"
           echo "Expected either 'true' or 'false'"
           echo "Got '${{ inputs.check }}'"
+          exit 1
         fi
 
         if [ ${{ inputs.in_place }} == "true" ]; then
@@ -82,6 +82,7 @@ runs:
           echo "Invalid value for input 'in_place'"
           echo "Expected either 'true' or 'false'"
           echo "Got '${{ inputs.in_place }}'"
+          exit 1
         fi
 
         if [ ${{ inputs.verbose }} == "true" ]; then
@@ -92,6 +93,7 @@ runs:
           echo "Invalid value for input 'verbose'"
           echo "Expected either 'true' or 'false'"
           echo "Got '${{ inputs.verbose }}'"
+          exit 1
         fi
 
         if [ -z ${{ inputs.config }} ]; then
