@@ -102,6 +102,8 @@ runs:
           config_arg="--config ${{ inputs.config }}"
         fi
 
+        set -x
+
         if [ -z ${{ inputs.diff_ref }} ]; then
           diff_arg=""
         else
