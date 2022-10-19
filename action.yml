@@ -1,22 +1,44 @@
-name: 'Sourcery GitHub Action'
+name: "Sourcery GitHub Action"
 
-description: 'A GitHub Action for running Sourcery.'
+branding:
+  icon: 'box'
+  color: 'orange'
+
+description: "A GitHub Action for running Sourcery."
 
 inputs:
   token:
-    description: 'The Sourcery token for logging in.'
+    description: "The Sourcery token for logging in."
     required: true
-  options:
-    description:
-      "Options passed to Sourcery. Run `sourcery review --help` to see available options."
+  target:
+    description: "File(s) or directory(ies) to review."
     required: false
-    default: "--check"
-  base_ref:
-    description: "Reference to compare the current branch with and run Sourcery on the diff. If empty, run Sourcery on the current branch."
+    default: "."
+  version:
+    description: "Sourcery CLI version, e.g. '0.12.10'. If empty, default to the latest version."
     required: false
     default: ""
-  version:
-    description: "Sourcery version - e.g. '0.12.8'. If empty, default to the latest version."
+  verbose:
+    description: "Verbose output with explanation and code snippets. Either 'true' or 'false'."
+    required: false
+    default: "true"
+  check:
+    description: "Fail job if issues are found. Either 'true' or 'false'."
+    required: false
+    default: "true"
+  in_place:
+    description: "Change files in place. Either 'true' or 'false'."
+    required: false
+    default: "false"
+  config:
+    description: "Location of the Sourcery YAML configuration file."
+    required: false
+    default: ""
+  diff_ref:
+    description: >
+      Reference to compare the current branch with and run Sourcery on the diff.
+      If empty, run Sourcery on the entire codebase.
+      To review only code that changed in a PR, use "${{ github.event.pull_request.base.sha }}".
     required: false
     default: ""
 
@@ -26,7 +48,8 @@ runs:
     - name: Install Sourcery
       shell: bash
       run: |
-        if [ "${{ inputs.version }}" == "" ]; then
+        if [ -z ${{ inputs.version }} ]
+        then
           python3 -m pip install sourcery-cli
         else
           python3 -m pip install sourcery-cli==${{ inputs.version }}
@@ -40,8 +63,55 @@ runs:
     - name: Sourcery review
       shell: bash
       run: |
-        if [ "${{ inputs.base_ref }}" == "" ]; then
-          sourcery review ${{ inputs.options }} .
+        if [ ${{ inputs.check }} == "true" ]; then
+          check_arg="--check"
+        elif [ ${{ inputs.check }} == "false" ]; then
+          check_arg=""
         else
-          git diff ${{ inputs.base_ref }}... --diff-filter=AMR --name-only | xargs sourcery review  ${{ inputs.options }}
+          echo "Invalid value for input 'check'"
+          echo "Expected either 'true' or 'false'"
+          echo "Got '${{ inputs.check }}'"
+          exit 1
         fi
+
+        if [ ${{ inputs.in_place }} == "true" ]; then
+          in_place_arg="--in-place"
+        elif [ ${{ inputs.in_place }} == "false" ]; then
+          in_place_arg=""
+        else
+          echo "Invalid value for input 'in_place'"
+          echo "Expected either 'true' or 'false'"
+          echo "Got '${{ inputs.in_place }}'"
+          exit 1
+        fi
+
+        if [ ${{ inputs.verbose }} == "true" ]; then
+          verbose_arg="--verbose"
+        elif [ ${{ inputs.verbose }} == "false" ]; then
+          verbose_arg=""
+        else
+          echo "Invalid value for input 'verbose'"
+          echo "Expected either 'true' or 'false'"
+          echo "Got '${{ inputs.verbose }}'"
+          exit 1
+        fi
+
+        if [ -z ${{ inputs.config }} ]; then
+          config_arg=""
+        else
+          config_arg="--config ${{ inputs.config }}"
+        fi
+
+        if [ -z ${{ inputs.diff_ref }} ]; then
+          diff_arg=""
+        else
+          diff_arg="--diff=git diff \"${{ inputs.diff_ref }}\""
+        fi
+
+        sourcery review \
+          $check_arg \
+          $in_place_arg \
+          $verbose_arg \
+          $config_arg \
+          $diff_arg \
+          ${{ inputs.target }}
