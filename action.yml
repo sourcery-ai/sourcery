@@ -108,6 +108,10 @@ runs:
           diff_ref=${{ inputs.diff_ref }}
           diff_comand="git diff $diff_ref"
           diff_arg="--diff=\"$diff_comand\""
+
+          echo $diff_ref
+          echo $diff_comand
+          echo $diff_arg
         fi
 
         set -x; sourcery review \
