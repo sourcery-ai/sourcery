@@ -111,9 +111,9 @@ runs:
         fi
 
         sourcery review \
-          "${check_arg}" \
-          "${in_place_arg}" \
-          "${verbose_arg}" \
-          "${config_arg}" \
+          $check_arg \
+          $in_place_arg \
+          $verbose_arg \
+          $config_arg \
           "${diff_arg}" \
           ${{ inputs.target }}
