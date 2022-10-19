@@ -105,7 +105,7 @@ runs:
         if [ -z ${{ inputs.diff_ref }} ]; then
           diff_arg=""
         else
-          diff_arg="--diff=\"git diff ${{ inputs.diff_ref }}\""
+          diff_arg='--diff="git diff ${{ inputs.diff_ref }}"'
         fi
 
         sourcery review \
