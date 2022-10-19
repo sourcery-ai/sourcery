@@ -105,20 +105,13 @@ runs:
         if [ -z ${{ inputs.diff_ref }} ]; then
           diff_arg=""
         else
-          diff_ref=${{ inputs.diff_ref }}
-          diff_comand="git diff $diff_ref"
-          diff_arg="--diff=\"git diff ${diff_ref}\""
-
-          set -x
-          echo $diff_ref
-          echo $diff_comand
-          echo $diff_arg
+          diff_arg="--diff=\"git diff ${{ inputs.diff_ref }}\""
         fi
 
         sourcery review \
-          $check_arg \
-          $in_place_arg \
-          $verbose_arg \
-          $config_arg \
-          $diff_arg \
+          "${check_arg}" \
+          "${in_place_arg}" \
+          "${verbose_arg}" \
+          "${config_arg}" \
+          "${diff_arg}" \
           ${{ inputs.target }}
