@@ -109,12 +109,13 @@ runs:
           diff_comand="git diff $diff_ref"
           diff_arg="--diff=\"$diff_comand\""
 
-          set -x; echo $diff_ref
-          set -x; echo $diff_comand
-          set -x; echo $diff_arg
+          set -x
+          echo $diff_ref
+          echo $diff_comand
+          echo $diff_arg
         fi
 
-        set -x; sourcery review \
+        sourcery review \
           $check_arg \
           $in_place_arg \
           $verbose_arg \
