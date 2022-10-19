@@ -108,6 +108,14 @@ runs:
           diff_arg='--diff="git diff ${{ inputs.diff_ref }}"'
         fi
 
+        echo sourcery review \
+          $check_arg \
+          $in_place_arg \
+          $verbose_arg \
+          $config_arg \
+          $diff_arg \
+          ${{ inputs.target }}
+
         sourcery review \
           $check_arg \
           $in_place_arg \
