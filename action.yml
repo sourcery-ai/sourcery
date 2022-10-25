@@ -64,10 +64,8 @@ runs:
       shell: bash
       run: |
         if [ ${{ inputs.check }} == "true" ]; then
-          check_arg="--check"
-        elif [ ${{ inputs.check }} == "false" ]; then
-          check_arg=""
-        else
+          SOURCERY_OPTIONS+=( "--check" )
+        elif [ ${{ inputs.check }} != "false" ]; then
           echo "Invalid value for input 'check'"
           echo "Expected either 'true' or 'false'"
           echo "Got '${{ inputs.check }}'"
@@ -75,10 +73,8 @@ runs:
         fi
 
         if [ ${{ inputs.in_place }} == "true" ]; then
-          in_place_arg="--in-place"
-        elif [ ${{ inputs.in_place }} == "false" ]; then
-          in_place_arg=""
-        else
+          SOURCERY_OPTIONS+=( "--in-place" )
+        elif [ ${{ inputs.in_place }} != "false" ]; then
           echo "Invalid value for input 'in_place'"
           echo "Expected either 'true' or 'false'"
           echo "Got '${{ inputs.in_place }}'"
@@ -86,34 +82,20 @@ runs:
         fi
 
         if [ ${{ inputs.verbose }} == "true" ]; then
-          verbose_arg="--verbose"
-        elif [ ${{ inputs.verbose }} == "false" ]; then
-          verbose_arg=""
-        else
+          SOURCERY_OPTIONS+=( "--verbose" )
+        elif [ ${{ inputs.verbose }} != "false" ]; then
           echo "Invalid value for input 'verbose'"
           echo "Expected either 'true' or 'false'"
           echo "Got '${{ inputs.verbose }}'"
           exit 1
         fi
 
-        if [ -z ${{ inputs.config }} ]; then
-          config_arg=""
-        else
-          config_arg="--config ${{ inputs.config }}"
+        if [ -n ${{ inputs.config }} ]; then
+          SOURCERY_OPTIONS+=( "--config ${{ inputs.config }}" )
         fi
 
-        set -x
-
-        if [ -z ${{ inputs.diff_ref }} ]; then
-          diff_arg=""
-        else
-          diff_arg="--diff=\"git diff ${{ inputs.diff_ref }}\""
+        if [ -n ${{ inputs.diff_ref }} ]; then
+          SOURCERY_OPTIONS+=( "--diff=git diff ${{ inputs.diff_ref }}" )
         fi
 
-        sourcery review \
-          $check_arg \
-          $in_place_arg \
-          $verbose_arg \
-          $config_arg \
-          "${diff_arg}" \
-          ${{ inputs.target }}
+        sourcery review "${SOURCERY_OPTIONS[@]}" ${{ inputs.target }}
