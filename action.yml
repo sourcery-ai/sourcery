@@ -98,4 +98,6 @@ runs:
           SOURCERY_OPTIONS+=( "--diff=git diff ${{ inputs.diff_ref }}" )
         fi
 
+        set -x
+
         sourcery review "${SOURCERY_OPTIONS[@]}" ${{ inputs.target }}
