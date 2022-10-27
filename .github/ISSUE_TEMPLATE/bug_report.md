@@ -12,6 +12,8 @@ labels: bug
 ### Description
 <!-- (Explain the problematic behaviour, and, if possible, describe what you expected to happen instead.) -->
 
+### Code snippet that reproduces issue
+<!-- (If the issue relates to an incorrect suggestion or bug when viewing a particular piece of code, please paste it here.) -->
 
 ### Debug Information
 
