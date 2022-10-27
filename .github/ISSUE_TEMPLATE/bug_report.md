@@ -14,6 +14,9 @@ labels: bug
 
 ### Code snippet that reproduces issue
 <!-- (If the issue relates to an incorrect suggestion or bug when viewing a particular piece of code, please paste it here.) -->
+```python
+
+```
 
 ### Debug Information
 
