@@ -15,7 +15,7 @@ inputs:
     required: false
     default: "."
   version:
-    description: "Sourcery CLI version, e.g. '0.12.10'. If empty, default to the latest version."
+    description: "Sourcery CLI version, e.g. '0.12.12'. If empty, default to the latest version."
     required: false
     default: ""
   verbose:
