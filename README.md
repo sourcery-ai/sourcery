@@ -1,4 +1,4 @@
-[![Sourcery](https://img.shields.io/badge/Sourcery-enabled-brightgreen)](https://sourcery.ai)  ![Discord Shield](https://discordapp.com/api/guilds/1035190801195597944/widget.png?style=shield)
+[![Sourcery](https://img.shields.io/badge/Sourcery-enabled-brightgreen)](https://sourcery.ai)
 
 
 ## Sourcery
