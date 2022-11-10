@@ -1,4 +1,5 @@
-[![Sourcery](https://img.shields.io/badge/Sourcery-enabled-brightgreen)](https://sourcery.ai)  [![Gitter](https://badges.gitter.im/sourcery-ai/sourcery.svg)](https://gitter.im/sourcery-ai/sourcery)
+[![Sourcery](https://img.shields.io/badge/Sourcery-enabled-brightgreen)](https://sourcery.ai)  ![Discord Shield](https://discordapp.com/api/guilds/1035190801195597944/widget.png?style=shield)
+
 
 ## Sourcery
 Refactor Python instantly and keep your codebase maintainable.
