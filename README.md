@@ -4,7 +4,7 @@
 ## Sourcery
 Instantly review and improve your Python code to keep your codebase maintainable. 
 
-Get started with `pip install sourcery-cli` to have Sourcery review all your code locally or star this repo to have our GitHub bot review your most popular Python repo
+Get started with our CLI to have Sourcery review all your code locally or star this repo to have our GitHub bot review your most popular Python repo
 
 ## CLI
 
@@ -14,7 +14,7 @@ To start `pip install sourcery-cli`, login with `sourcery login`, and then run `
 
 ## CI & Pre-Commit
 
-Keep your entire codebase standardized with Sourcery’s CI integration and pre-commit hook. 
+Keep your entire codebase standardized with Sourcery’s [CI integration](https://docs.sourcery.ai/Guides/Getting-Started/CI/) and [pre-commit hook](https://docs.sourcery.ai/Guides/Getting-Started/Pre-Commit/). 
 
 For CI we recommend using
 
