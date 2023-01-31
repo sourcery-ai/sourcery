@@ -1,4 +1,4 @@
 [project]
-name = "sourcery"
+name = "sourcery-precommit"
 version = "1.0.3"
 description = "Magically refactor Python"

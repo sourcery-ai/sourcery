@@ -10,7 +10,7 @@ Get started with our CLI to have Sourcery review all your code locally or star t
 
 You can have Sourcery review your entire project and make dozens or hundreds (or thousands) of improvements with a single command from the command line. 
 
-To start `pip install sourcery-cli`, login with `sourcery login`, and then run `sourcery review <some path>` to have Sourcery review and make suggestions on every file in that path
+To start `pip install sourcery`, login with `sourcery login`, and then run `sourcery review <some path>` to have Sourcery review and make suggestions on every file in that path
 
 ## CI & Pre-Commit
 
@@ -19,7 +19,7 @@ Keep your entire codebase standardized with Sourcery’s [CI integration](https:
 For CI we recommend using
 
 ```yaml
-pip install sourcery-cli
+pip install sourcery
 # Store your Sourcery token as a secret in your CI environment.
 sourcery login --token $SOURCERY_TOKEN
 sourcery review --check --diff "git diff main" .
@@ -32,7 +32,7 @@ To set up your pre-commit hooks use:
 ```yaml
 repos:
   - repo: https://github.com/sourcery-ai/sourcery
-    rev: v0.13.0
+    rev: v1.0.3
     hooks:
       - id: sourcery
         # The best way to use Sourcery in a pre-commit hook:
