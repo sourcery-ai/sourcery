@@ -1,8 +1,4 @@
 [project]
 name = "sourcery-precommit"
-version = "1.0.0"
+version = "1.0.3"
 description = "Magically refactor Python"
-dependencies = ["sourcery==1.0.0"] 
-
-[project.scripts]
-sourcery = "sourcery.wrapper:main"
