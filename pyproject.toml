@@ -2,7 +2,7 @@
 name = "sourcery"
 version = "1.0.0"
 description = "Magically refactor Python"
-dependencies = ["sourcery-nightly==1.0.0"] 
+dependencies = ["sourcery==1.0.0"] 
 
 [project.scripts]
 sourcery = "sourcery.wrapper:main"
