@@ -1,5 +1,5 @@
 [project]
-name = "sourcery"
+name = "sourcery-precommit"
 version = "1.0.0"
 description = "Magically refactor Python"
 dependencies = ["sourcery==1.0.0"] 
