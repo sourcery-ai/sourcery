@@ -1,22 +1,21 @@
 [![Sourcery](https://img.shields.io/badge/Sourcery-enabled-brightgreen)](https://sourcery.ai)
 
-
 ## Sourcery
 Instantly review and improve your Python code to keep your codebase maintainable. 
 
-Get started with our CLI to have Sourcery review all your code locally or star this repo to have our GitHub bot review your most popular Python repo
+Get started with our CLI to have Sourcery review all your code locally or star this repo to have our GitHub bot review your most popular Python repo.
 
 ## CLI
 
 You can have Sourcery review your entire project and make dozens or hundreds (or thousands) of improvements with a single command from the command line. 
 
-To start `pip install sourcery`, login with `sourcery login`, and then run `sourcery review <some path>` to have Sourcery review and make suggestions on every file in that path
+To start `pip install sourcery`, login with `sourcery login`, and then run `sourcery review <some path>` to have Sourcery review and make suggestions on every file in that path.
 
 ## CI & Pre-Commit
 
 Keep your entire codebase standardized with Sourcery’s [CI integration](https://docs.sourcery.ai/Guides/Getting-Started/CI/) and [pre-commit hook](https://docs.sourcery.ai/Guides/Getting-Started/Pre-Commit/). 
 
-For CI we recommend using
+For CI we recommend using:
 
 ```yaml
 pip install sourcery
@@ -45,7 +44,7 @@ Note: Sourcery is fully free for open-source projects - but you need a [Team pla
 
 ## IDE Integration
 
-Sourcery integrates into your editor to review and improve your code while you’re writing it
+Sourcery integrates into your editor to review and improve your code while you’re writing it.
 
 Find quick installation instructions here:
 
@@ -58,7 +57,7 @@ More editor integrations coming soon.
 
 ## GitHub Code Reviews
 
-Ensure your code is always at the highest quality. Sourcery reviews and makes suggestions on your whole repo when you install and then checks all new pull requests in the future
+Ensure your code is always at the highest quality. Sourcery reviews and makes suggestions on your whole repo when you install and then checks all new pull requests in the future.
 
 You can get set up and running in 1 minute. Just follow this [link](https://github.com/apps/sourcery-ai/installations/new) and select your repos.
 
@@ -79,5 +78,3 @@ Or to try it out right away, ⭐ this repo, and Sourcery will review your most
 Let the world know your project is using Sourcery to refactor with this badge:
 
 [![Sourcery](https://img.shields.io/badge/Sourcery-enabled-brightgreen)](https://sourcery.ai)
-
-    [![Sourcery](https://img.shields.io/badge/Sourcery-enabled-brightgreen)](https://sourcery.ai)
