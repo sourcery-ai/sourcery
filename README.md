@@ -79,6 +79,6 @@ Let the world know your project is using Sourcery to refactor with this badge:
 
 [![Sourcery](https://img.shields.io/badge/Sourcery-enabled-brightgreen)](https://sourcery.ai)
 
-Use the code below for copy badge image as follow:
+Copy the code below into your README to display your Sourcery badge:
 
     [![Sourcery](https://img.shields.io/badge/Sourcery-enabled-brightgreen)](https://sourcery.ai)
