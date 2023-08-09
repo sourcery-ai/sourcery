@@ -31,7 +31,7 @@ To set up your pre-commit hooks use:
 ```yaml
 repos:
   - repo: https://github.com/sourcery-ai/sourcery
-    rev: v1.6.0
+    rev: v1.7.0
     hooks:
       - id: sourcery
         # The best way to use Sourcery in a pre-commit hook:
