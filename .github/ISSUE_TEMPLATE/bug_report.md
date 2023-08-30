@@ -7,6 +7,7 @@ labels: bug
 ### Checklist
 
 - [ ] I have searched the [Sourcery documentation](https://docs.sourcery.ai/) for the issue, and found nothing
+- [ ] I have read the common issues listed in the [Sourcery troubleshooting page](https://docs.sourcery.ai/Product/Troubleshooting/#troubleshooting), and found nothing
 - [ ] I have checked there are no open [bugs](https://github.com/sourcery-ai/sourcery/issues?q=label%3Abug) referencing the same bug or problem
 
 ### Description
