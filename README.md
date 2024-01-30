@@ -1,50 +1,31 @@
 [![Sourcery](https://img.shields.io/badge/Sourcery-enabled-brightgreen)](https://sourcery.ai)
 
-## Sourcery
-Instantly review and improve your Python code to keep your codebase maintainable. 
+## Sourcery Code Reviews
+Sourcery will review any pull request on any GitHub repository to provide instant feedback on the proposed changes.
 
-Get started with our CLI to have Sourcery review all your code locally or star this repo to have our GitHub bot review your most popular Python repo.
+Every review will include a summary of the changes, high level feedback, and line by line suggestions/comments (where relevant).
 
-## CLI
+Our goal is to provide you with the type of code review you would expect to get from a colleague. We're not there yet, but we're continually working to get our reviews closer to that point.
 
-You can have Sourcery review your entire project and make dozens or hundreds (or thousands) of improvements with a single command from the command line. 
+Add Sourcery to any public repo to get reviews for free or you can try it on any private repo for 14 days for free. 
 
-To start `pip install sourcery`, login with `sourcery login`, and then run `sourcery review <some path>` to have Sourcery review and make suggestions on every file in that path.
 
-## CI & Pre-Commit
+## Getting Started
+[Add Sourcery](https://github.com/apps/sourcery-ai/installations/new) to any repo to start seeing reviews on your new pull requests.
 
-Keep your entire codebase standardized with Sourcery’s [CI integration](https://docs.sourcery.ai/Guides/Getting-Started/CI/) and [pre-commit hook](https://docs.sourcery.ai/Guides/Getting-Started/Pre-Commit/). 
+Sourcery is completely free to use for public repos/open source projects. 
 
-For CI we recommend using:
+For private repos you can try Sourcery for free for 14 days, but need a [Team or Pro plan](https://docs.sourcery.ai/Product/Plans/) after your trial ends. 
 
-```yaml
-pip install sourcery
-# Store your Sourcery token as a secret in your CI environment.
-sourcery login --token $SOURCERY_TOKEN
-sourcery review --check --diff "git diff main" .
-```
+## Privacy & Security
+We use both OpenAI and Anthropic LLMs to provide pieces of our code reviews. Because of this, we need to send them sections of your code (typically the diff of the PR). 
 
-Or if it’s easier you can [check out our GitHub Action](https://github.com/marketplace/actions/sourcery-action)!
+However, none of your code is stored by us or by any third party for more than 30 days and none of your code is used to train any AI models. 
 
-To set up your pre-commit hooks use:
 
-```yaml
-repos:
-  - repo: https://github.com/sourcery-ai/sourcery
-    rev: v1.15.0
-    hooks:
-      - id: sourcery
-        # The best way to use Sourcery in a pre-commit hook:
-        # * review only changed lines:
-        # * omit the summary
-        args: [--diff=git diff HEAD, --no-summary]
-```
+## IDE Coding Assistant
 
-Note: Sourcery is fully free for open-source projects - but you need a [Team plan](https://docs.sourcery.ai/Product/Plans/) to use Sourcery in CI or as a pre-commit hook for private projects.
-
-## IDE Integration
-
-Sourcery integrates into your editor to review and improve your code while you’re writing it.
+In addition to code reviews, you can get 
 
 Find quick installation instructions here:
 
@@ -55,24 +36,17 @@ Find quick installation instructions here:
 
 More editor integrations coming soon.
 
-## GitHub Code Reviews
+## Feedback
 
-Ensure your code is always at the highest quality. Sourcery reviews and makes suggestions on your whole repo when you install and then checks all new pull requests in the future.
-
-You can get set up and running in 1 minute. Just follow this [link](https://github.com/apps/sourcery-ai/installations/new) and select your repos.
-
-Or to try it out right away, ⭐ this repo, and Sourcery will review your most popular Python repo and send you a pull request. As an added bonus **@sourcery-ai-bot** will ⭐ your repo too.
-
-## Demo
-
-![Sourcery demo](sourcery-demo.gif)
+We're always trying to learn how we can make Sourcery better. Let us know any thoughts you have by emailing tim@sourcery.ai
 
 ## **Links**
 
-- [Docs](https://docs.sourcery.ai/)
 - [Sourcery website](https://sourcery.ai/)
 - [VS Code Plugin](https://marketplace.visualstudio.com/items?itemName=sourcery.sourcery&ssr=false#overview)
 - [PyCharm Plugin](https://plugins.jetbrains.com/plugin/12631-sourcery)
+
+
 
 ## Badges
 Let the world know your project is using Sourcery to refactor with this badge:
