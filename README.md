@@ -7,9 +7,6 @@ Every review will include a summary of the changes, high level feedback, and lin
 
 Our goal is to provide you with the type of code review you would expect to get from a colleague. We're not there yet, but we're continually working to get our reviews closer to that point.
 
-Add Sourcery to any public repo to get reviews for free or you can try it on any private repo for 14 days for free. 
-
-
 ## Getting Started
 [Add Sourcery](https://github.com/apps/sourcery-ai/installations/new) to any repo to start seeing reviews on your new pull requests.
 
