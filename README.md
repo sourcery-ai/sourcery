@@ -1,6 +1,6 @@
 [![Sourcery](https://img.shields.io/badge/Sourcery-enabled-brightgreen)](https://sourcery.ai)
 
-## Sourcery - Instant, AI-Powered, Code Reviews 
+## Sourcery - Instant AI Code Reviews 
 
 Sourcery is here to help you:
 - Speed up your code review process
