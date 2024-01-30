@@ -1,7 +1,16 @@
 [![Sourcery](https://img.shields.io/badge/Sourcery-enabled-brightgreen)](https://sourcery.ai)
 
-## Sourcery Code Reviews
-Sourcery will review any pull request on any GitHub repository to provide instant feedback on the proposed changes.
+## Sourcery - Instant, AI-Powered, Code Reviews 
+
+Sourcery is here to help you:
+- Speed up your code review process
+- Improve your code quality and ensure high quality code
+- Spend less time on reviews
+- Accelerate development velocity
+
+## What is Sourcery
+
+Sourcery is an automated code reviewer that will review any pull request on any GitHub repository to provide instant feedback on the proposed changes.
 
 Every review will include a summary of the changes, high level feedback, and line by line suggestions/comments (where relevant).
 
@@ -22,7 +31,13 @@ However, none of your code is stored by us or by any third party for more than 3
 
 ## IDE Coding Assistant
 
-In addition to code reviews, you can get 
+In addition to code reviews, you can use Sourcery as an automated pair programmer in your IDE.
+
+Sourcery can help you:
+- Understand existing code (whether you wrote it yesterday or someone else wrote it years ago)
+- Add unit tests and docstrings to your code
+- Optimize code for readability or performance
+- Improve your code quality with instant suggestions
 
 Find quick installation instructions here:
 
@@ -35,7 +50,7 @@ More editor integrations coming soon.
 
 ## Feedback
 
-We're always trying to learn how we can make Sourcery better. Let us know any thoughts you have by emailing tim@sourcery.ai
+We're always trying to learn how we can make Sourcery better. Let us know any thoughts you have by emailing hello@sourcery.ai
 
 ## **Links**
 
