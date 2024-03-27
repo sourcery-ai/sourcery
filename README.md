@@ -1,19 +1,20 @@
 [![Sourcery](https://img.shields.io/badge/Sourcery-enabled-brightgreen)](https://sourcery.ai)
 
 ## Sourcery
-Instantly review and improve your Python code to keep your codebase maintainable. 
+
+Instantly review and improve your Python code to keep your codebase maintainable.
 
 Get started with our CLI to have Sourcery review all your code locally or star this repo to have our GitHub bot review your most popular Python repo.
 
 ## CLI
 
-You can have Sourcery review your entire project and make dozens or hundreds (or thousands) of improvements with a single command from the command line. 
+You can have Sourcery review your entire project and make dozens or hundreds (or thousands) of improvements with a single command from the command line.
 
 To start `pip install sourcery`, login with `sourcery login`, and then run `sourcery review <some path>` to have Sourcery review and make suggestions on every file in that path.
 
 ## CI & Pre-Commit
 
-Keep your entire codebase standardized with Sourcery’s [CI integration](https://docs.sourcery.ai/Guides/Getting-Started/CI/) and [pre-commit hook](https://docs.sourcery.ai/Guides/Getting-Started/Pre-Commit/). 
+Keep your entire codebase standardized with Sourcery’s [CI integration](https://docs.sourcery.ai/Guides/Getting-Started/CI/) and [pre-commit hook](https://docs.sourcery.ai/Guides/Getting-Started/Pre-Commit/).
 
 For CI we recommend using:
 
@@ -75,6 +76,7 @@ Or to try it out right away, ⭐ this repo, and Sourcery will review your most
 - [PyCharm Plugin](https://plugins.jetbrains.com/plugin/12631-sourcery)
 
 ## Badges
+
 Let the world know your project is using Sourcery to refactor with this badge:
 
 [![Sourcery](https://img.shields.io/badge/Sourcery-enabled-brightgreen)](https://sourcery.ai)
