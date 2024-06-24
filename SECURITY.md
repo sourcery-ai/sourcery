@@ -18,6 +18,7 @@ List the versions currently supported with security updates.
 
 Use this section to tell people how to report a vulnerability.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
+Tell them where to go. Explain how frequently they can expect updates on a
+reported vulnerability. Describe what to expect if the vulnerability is accepted or
+declined.
 declined, etc.
