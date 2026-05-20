@@ -61,7 +61,7 @@ We're always trying to learn how we can make Sourcery better. Let us know any th
 
 
 ## Badges
-Let the world know your project is using Sourcery to refactor with this badge:
+Let the world know your project is using Sourcery with this badge:
 
 [![Sourcery](https://img.shields.io/badge/Sourcery-enabled-brightgreen)](https://sourcery.ai)
 
